@@ -1,0 +1,77 @@
+interactions:
+- request:
+    body: '{"page_number": 1, "page_size": 2, "sort_by": "name", "sort_direction":
+      "asc", "name": "", "phone_number": "", "emails": "", "assignee_ids": [], "status_ids":
+      []}'
+    headers:
+      Content-Length:
+      - '162'
+      Content-Type:
+      - application/json
+      X-PW-AccessToken:
+      - 144ec40caf4559cb1cf7e0338970af6c
+      X-PW-Application:
+      - developer_api
+      X-PW-UserEmail:
+      - adam@claimer.io
+    method: POST
+    uri: https://api.prosperworks.com/developer_api/v1/leads/search
+  response:
+    body:
+      string: '[{"id":42149375,"name":"Alessio D''Antino","prefix":null,"first_name":"Alessio","last_name":"D''Antino","middle_name":null,"suffix":null,"address":{"street":null,"city":"San
+        Francisco","state":"California","postal_code":null,"country":"US"},"assignee_id":761921,"company_name":"Forward
+        Fooding","customer_source_id":956007,"details":"Possible Interests: Accounting,
+        Adobe Photoshop, Business Development, Business Development \u0026 Partnerships,
+        Management, Marketing Management, Microsoft Office, Pricing, Product Development,
+        Product Launch, Product Marketing, Sales and Marketing, Training, Wordpress\n\n","email":{"email":"alessio@forwardfooding.com","category":"work"},"interaction_count":1,"monetary_unit":null,"monetary_value":null,"converted_unit":"GBP","converted_value":null,"socials":[{"url":"https://www.linkedin.com/in/alessiodantino","category":"linkedin"},{"url":"https://twitter.com/visionentrale","category":"twitter"},{"url":"https://www.facebook.com/alessio.dantino","category":"facebook"},{"url":"https://gravatar.com/alessiodantino","category":"gravatar"},{"url":"https://about.me/alessiodantino","category":"other"},{"url":"https://angel.co/alessio-d-antino","category":"other"}],"status":"Unqualified","status_id":968078,"tags":["forward
+        fooding"],"title":null,"websites":[{"url":"http://crowdfooding.co","category":"work"}],"phone_numbers":[],"custom_fields":[{"custom_field_definition_id":331165,"value":527964}],"date_created":1558965270,"date_modified":1558968070,"date_last_contacted":1558681200},{"id":42149287,"name":"Dan
+        Mitchell","prefix":null,"first_name":"Dan","last_name":"Mitchell","middle_name":null,"suffix":null,"address":{"street":"17-21
+        Emerald Street","city":"London","state":"","postal_code":"WC1N 3QN","country":"GB"},"assignee_id":761921,"company_name":"Sparqa
+        Legal","customer_source_id":956007,"details":null,"email":{"email":"dan.mitchell@sparqa.com","category":"work"},"interaction_count":12,"monetary_unit":null,"monetary_value":null,"converted_unit":"GBP","converted_value":null,"socials":[],"status":"Unqualified","status_id":968078,"tags":["the
+        business show 2019"],"title":"Commercial","websites":[{"url":"http://www.sparqa.com","category":"work"}],"phone_numbers":[{"number":"+44
+        7899 912280","category":"work"}],"custom_fields":[{"custom_field_definition_id":331165,"value":527964}],"date_created":1558965152,"date_modified":1559150671,"date_last_contacted":1559150493}]'
+    headers:
+      Alt-Svc:
+      - clear
+      Cache-Control:
+      - no-cache, no-store, max-age=0, must-revalidate
+      Content-Length:
+      - '2425'
+      Content-Type:
+      - application/json; charset=utf-8
+      Date:
+      - Wed, 29 May 2019 19:28:58 GMT
+      Expires:
+      - Fri, 01 Jan 1990 00:00:00 GMT
+      Pragma:
+      - no-cache
+      Server:
+      - nginx
+      Set-Cookie:
+      - visited=true; path=/; expires=Sun, 29 May 2039 19:28:58 -0000
+      - uuid=1ca3df4d-baba-4031-9209-09e149a771d8; path=/; expires=Sun, 29 May 2039
+        19:28:58 -0000
+      Strict-Transport-Security:
+      - max-age=31536000; includeSubDomains
+      Vary:
+      - Accept-Encoding, Origin
+      Via:
+      - 1.1 google
+      X-Content-Type-Options:
+      - nosniff
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-PW-TOTAL:
+      - '14'
+      X-Rack-CORS:
+      - miss; no-origin
+      X-Request-Id:
+      - 3e64cfdf-5db6-4c45-8984-339f964fb1e1
+      X-Runtime:
+      - '0.300003'
+      X-XSS-Protection:
+      - 1; mode=block
+    status:
+      code: 200
+      message: OK
+version: 1
