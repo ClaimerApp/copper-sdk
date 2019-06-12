@@ -1,5 +1,6 @@
 import requests, json
 from .leads import Leads
+from .activities import Activities
 
 class Copper():
     # Constructor - authentication details
@@ -31,3 +32,6 @@ class Copper():
 
     def leads(self):
         return Leads(self)
+
+    def activities(self):
+        return Activities(self)

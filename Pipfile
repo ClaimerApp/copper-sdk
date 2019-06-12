@@ -7,7 +7,7 @@ verify_ssl = true
 
 [packages]
 requests = ">=2.20.0"
-vcrpy = ">=2.0.1"
+vcrpy = {file = "https://github.com/kevin1024/vcrpy/archive/master.zip"}
 pytest = ">=4.5.0"
 
 [requires]

@@ -1,0 +1,70 @@
+interactions:
+- request:
+    body: '{"page_number": 1, "page_size": 2, "sort_by": "name", "sort_direction":
+      "asc", "name": "", "phone_number": "", "emails": "", "assignee_ids": [], "status_ids":
+      []}'
+    headers:
+      Content-Length:
+      - '162'
+      Content-Type:
+      - application/json
+      X-PW-Application:
+      - developer_api
+    method: POST
+    uri: https://api.prosperworks.com/developer_api/v1/leads/search
+  response:
+    body:
+      string: '[{"id":42149375,"name":"Alessio D''Antino","prefix":null,"first_name":"Alessio","last_name":"D''Antino","middle_name":null,"suffix":null,"address":{"street":null,"city":"San
+        Francisco","state":"California","postal_code":null,"country":"US"},"assignee_id":761921,"company_name":"Forward
+        Fooding","customer_source_id":956007,"details":"Possible Interests: Accounting,
+        Adobe Photoshop, Business Development, Business Development \u0026 Partnerships,
+        Management, Marketing Management, Microsoft Office, Pricing, Product Development,
+        Product Launch, Product Marketing, Sales and Marketing, Training, Wordpress\n\n","email":{"email":"alessio@forwardfooding.com","category":"work"},"interaction_count":2,"monetary_unit":null,"monetary_value":null,"converted_unit":null,"converted_value":null,"socials":[{"url":"https://www.linkedin.com/in/alessiodantino","category":"linkedin"},{"url":"https://twitter.com/visionentrale","category":"twitter"},{"url":"https://www.facebook.com/alessio.dantino","category":"facebook"},{"url":"https://gravatar.com/alessiodantino","category":"gravatar"},{"url":"https://about.me/alessiodantino","category":"other"},{"url":"https://angel.co/alessio-d-antino","category":"other"}],"status":"Unqualified","status_id":968078,"tags":["forward
+        fooding"],"title":null,"websites":[{"url":"http://crowdfooding.co","category":"work"}],"phone_numbers":[],"custom_fields":[{"custom_field_definition_id":331165,"value":527964}],"date_created":1558965270,"date_modified":1559714830,"date_last_contacted":1559714639},{"id":42532117,"name":"Alex
+        Harvey","prefix":null,"first_name":"Alex","last_name":"Harvey","middle_name":null,"suffix":null,"address":{"street":null,"city":"Cardiff","state":"Wales","postal_code":null,"country":"GB"},"assignee_id":761921,"company_name":"Full
+        Stop Accounts","customer_source_id":956488,"details":null,"email":{"email":"alex@fullstopaccounts.co.uk","category":"work"},"interaction_count":2,"monetary_unit":null,"monetary_value":null,"converted_unit":null,"converted_value":null,"socials":[],"status":"Unqualified","status_id":968078,"tags":[],"title":null,"websites":[],"phone_numbers":[],"custom_fields":[{"custom_field_definition_id":331165,"value":527965}],"date_created":1559830655,"date_modified":1559871805,"date_last_contacted":1554130556}]'
+    headers:
+      Alt-Svc:
+      - clear
+      Cache-Control:
+      - no-cache, no-store, max-age=0, must-revalidate
+      Content-Length:
+      - '2285'
+      Content-Type:
+      - application/json; charset=utf-8
+      Date:
+      - Wed, 12 Jun 2019 15:29:35 GMT
+      Expires:
+      - Fri, 01 Jan 1990 00:00:00 GMT
+      Pragma:
+      - no-cache
+      Server:
+      - nginx
+      Set-Cookie:
+      - visited=true; path=/; expires=Sun, 12 Jun 2039 15:29:35 -0000
+      - uuid=3dc63bda-f712-4e78-adc5-3ce0f6e811bb; path=/; expires=Sun, 12 Jun 2039
+        15:29:35 -0000
+      Strict-Transport-Security:
+      - max-age=31536000; includeSubDomains
+      Vary:
+      - Accept-Encoding, Origin
+      Via:
+      - 1.1 google
+      X-Content-Type-Options:
+      - nosniff
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-PW-TOTAL:
+      - '41'
+      X-Rack-CORS:
+      - miss; no-origin
+      X-Request-Id:
+      - 393c310c-545b-4886-b40f-356ed74b3548
+      X-Runtime:
+      - '0.202498'
+      X-XSS-Protection:
+      - 1; mode=block
+    status:
+      code: 200
+      message: OK
+version: 1

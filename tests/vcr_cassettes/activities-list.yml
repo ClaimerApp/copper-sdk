@@ -1,0 +1,70 @@
+interactions:
+- request:
+    body: '{"page_number": 1, "page_size": 10, "full_result": false}'
+    headers:
+      Content-Length:
+      - '57'
+      Content-Type:
+      - application/json
+      X-PW-Application:
+      - developer_api
+    method: POST
+    uri: https://api.prosperworks.com/developer_api/v1/activities/search
+  response:
+    body:
+      string: '[{"id":5624069704,"parent":{"id":17079076,"type":"opportunity"},"type":{"id":3,"category":"system","name":"Stage
+        Change"},"user_id":761929,"details":"619565","activity_date":1560340253,"old_value":{"id":2899052,"name":"Qualified"},"new_value":{"id":2899054,"name":"Signed-up"},"date_created":1560340253,"date_modified":1560340253},{"id":5623956946,"parent":{"id":17061530,"type":"opportunity"},"type":{"id":3,"category":"system","name":"Stage
+        Change"},"user_id":761929,"details":"619564","activity_date":1560337217,"old_value":{"id":2899047,"name":"Qualified"},"new_value":{"id":2899049,"name":"Signed-up"},"date_created":1560337217,"date_modified":1560337217},{"id":5623844628,"parent":{"id":16880953,"type":"opportunity"},"type":{"id":3,"category":"system","name":"Stage
+        Change"},"user_id":761921,"details":"619565","activity_date":1560334105,"old_value":{"id":2899054,"name":"Signed-up"},"new_value":{"id":2899052,"name":"Qualified"},"date_created":1560334105,"date_modified":1560334105},{"id":5623844514,"parent":{"id":16885297,"type":"opportunity"},"type":{"id":3,"category":"system","name":"Stage
+        Change"},"user_id":761921,"details":"619565","activity_date":1560334102,"old_value":{"id":2899054,"name":"Signed-up"},"new_value":{"id":2899052,"name":"Qualified"},"date_created":1560334102,"date_modified":1560334102},{"id":5623759959,"parent":{"id":17079076,"type":"opportunity"},"type":{"id":1,"category":"system","name":"Status
+        Change"},"user_id":761929,"details":null,"activity_date":1560332150,"old_value":"Open","new_value":"Won","date_created":1560332150,"date_modified":1560332150},{"id":5623700863,"parent":{"id":17078864,"type":"opportunity"},"type":{"id":3,"category":"system","name":"Stage
+        Change"},"user_id":761929,"details":"619565","activity_date":1560330611,"old_value":{"id":2899052,"name":"Qualified"},"new_value":{"id":2899054,"name":"Signed-up"},"date_created":1560330611,"date_modified":1560330611},{"id":5623683233,"parent":{"id":16880953,"type":"opportunity"},"type":{"id":3,"category":"system","name":"Stage
+        Change"},"user_id":761929,"details":"619565","activity_date":1560330131,"old_value":{"id":2899052,"name":"Qualified"},"new_value":{"id":2899054,"name":"Signed-up"},"date_created":1560330131,"date_modified":1560330131},{"id":5623682835,"parent":{"id":17078488,"type":"opportunity"},"type":{"id":3,"category":"system","name":"Stage
+        Change"},"user_id":761929,"details":"619565","activity_date":1560330122,"old_value":{"id":2899052,"name":"Qualified"},"new_value":{"id":2899054,"name":"Signed-up"},"date_created":1560330122,"date_modified":1560330122},{"id":5623682530,"parent":{"id":17078470,"type":"opportunity"},"type":{"id":3,"category":"system","name":"Stage
+        Change"},"user_id":761929,"details":"619565","activity_date":1560330111,"old_value":{"id":2899052,"name":"Qualified"},"new_value":{"id":2899054,"name":"Signed-up"},"date_created":1560330111,"date_modified":1560330111},{"id":5623682293,"parent":{"id":17077381,"type":"opportunity"},"type":{"id":3,"category":"system","name":"Stage
+        Change"},"user_id":761929,"details":"619565","activity_date":1560330106,"old_value":{"id":2899052,"name":"Qualified"},"new_value":{"id":2899054,"name":"Signed-up"},"date_created":1560330106,"date_modified":1560330106}]'
+    headers:
+      Alt-Svc:
+      - clear
+      Cache-Control:
+      - no-cache, no-store, max-age=0, must-revalidate
+      Content-Length:
+      - '3243'
+      Content-Type:
+      - application/json; charset=utf-8
+      Date:
+      - Wed, 12 Jun 2019 15:28:00 GMT
+      Expires:
+      - Fri, 01 Jan 1990 00:00:00 GMT
+      Pragma:
+      - no-cache
+      Server:
+      - nginx
+      Set-Cookie:
+      - visited=true; path=/; expires=Sun, 12 Jun 2039 15:27:58 -0000
+      - uuid=68b6406b-0b52-4a9e-bd39-cbc2b4abdb22; path=/; expires=Sun, 12 Jun 2039
+        15:27:58 -0000
+      Strict-Transport-Security:
+      - max-age=31536000; includeSubDomains
+      Vary:
+      - Accept-Encoding, Origin
+      Via:
+      - 1.1 google
+      X-Content-Type-Options:
+      - nosniff
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-PW-TOTAL:
+      - '102'
+      X-Rack-CORS:
+      - miss; no-origin
+      X-Request-Id:
+      - 850813d4-7c55-478d-8b52-15c36e04e4f1
+      X-Runtime:
+      - '1.492494'
+      X-XSS-Protection:
+      - 1; mode=block
+    status:
+      code: 200
+      message: OK
+version: 1
