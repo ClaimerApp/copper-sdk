@@ -3,7 +3,7 @@ from copper_sdk.activities import Activities
 
 @vcr.use_cassette('tests/vcr_cassettes/activities-list.yml', filter_headers=['X-PW-AccessToken', 'X-PW-UserEmail'])
 def test_activities_list(copper):
-    """Test list activities"""
+    '''Test list activities'''
     response = copper.activities().list({
         'page_size': 10,
     })
