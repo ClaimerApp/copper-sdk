@@ -32,29 +32,20 @@ class Leads():
             'page_size': 20,  # number	The number of entries included in a page of results
             'sort_by': 'name',  # string	The field on which to sort the results (see footnote 1).
             'sort_direction': 'asc',  # string	The direction in which to sort the results. Possible values are: asc or desc.
-            'name': "",  # string	Full name of the Lead to search for.
-            'phone_number': "",  # string	Phone number of the Lead to search for.
-            'emails': "",  # string	Email of the Lead to search for.
-            'assignee_ids': [],  # number[]	The ids of Users that Leads are assigned to (see footnote 2).
-            'status_ids': [],  # number[]	An array of Lead status IDs (see footnote 3).
         }
 
         return self.copper.post('/leads/search', { **default_body, **body})
 
     def activities(self, id, body = {}):
         default_body = {
-            # 'parent': {}, # hash	A hash describing the resource to which activities must belong (footnote 1).
-            # 'activity_types': {}, # activity_type[]	The activity types to filter results on (footnote 1).	none
             'page_number': 1, # number	The page number (starting with 1) that you would like to view.	1
             'page_size': 20, # number	The number of entries included in a page of results	20
-            # 'minimum_activity_date': "", # number	The Unix timestamp of the earliest activity date.	none
-            # 'maximum_activity_date': "", # number	The Unix timestamp of the latest activity date.	none
             'full_result': False, # boolean	(Optional) If set to true, search performance improves but duplicate activity logs may be returned (footnote 3).	false
         }
 
-        return self.copper.post('/leads/' + str(id) + '/activities', body)
+        return self.copper.post('/leads/' + str(id) + '/activities', {**default_body, **body})
 
-    def sources():
+    def customer_sources():
         return self.copper.get('/customer_sources')
 
     def statuses():
