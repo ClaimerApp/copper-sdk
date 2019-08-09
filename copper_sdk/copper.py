@@ -1,6 +1,9 @@
 import requests, json
 from .leads import Leads
 from .activities import Activities
+from .companies import Companies
+from .people import People
+from .opportunities import Opportunities
 
 class Copper():
     # Constructor - authentication details
@@ -41,3 +44,12 @@ class Copper():
 
     def activities(self):
         return Activities(self)
+
+    def opportunities(self):
+        return Opportunities(self)
+
+    def people(self):
+        return People(self)
+
+    def companies(self):
+        return Companies(self)
