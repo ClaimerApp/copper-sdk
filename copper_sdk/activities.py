@@ -5,6 +5,12 @@ class Activities():
     def get(self, id):
         return self.copper.get('/activities/' + id)
 
+    def create(self, body = {}):
+        return self.copper.post('/activities', body)
+
+    def delete(self, id):
+        return self.copper.delete('/activities/' + id)
+
     def list(self, body = {}):
         default_body = {
             # 'parent': {}, # hash	A hash describing the resource to which activities must belong (footnote 1).

@@ -12,7 +12,7 @@ def test_leads_list(copper):
     assert isinstance(response[0], dict)
     assert len(response) == 2
 
-def test_leads_crete():
+def test_leads_create():
     '''Test creation of leads'''
     pass
 

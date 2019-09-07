@@ -1,6 +1,9 @@
 import requests, json
 from .leads import Leads
 from .activities import Activities
+from .companies import Companies
+from .people import People
+from .opportunities import Opportunities
 
 class Copper():
     # Constructor - authentication details
@@ -26,6 +29,12 @@ class Copper():
     def post(self, endpoint, opts):
         return self.api_call('post', endpoint, opts)
 
+    def put(self, endpoint, opts):
+        return self.api_call('put', endpoint, opts)
+
+    def delete(self, endpoint):
+        return self.api_call('delete', endpoint)
+
     def api_call(self, method, endpoint, opts = None):
         optsJson = None
         if opts:
@@ -41,3 +50,12 @@ class Copper():
 
     def activities(self):
         return Activities(self)
+
+    def opportunities(self):
+        return Opportunities(self)
+
+    def people(self):
+        return People(self)
+
+    def companies(self):
+        return Companies(self)
