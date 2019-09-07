@@ -29,6 +29,12 @@ class Copper():
     def post(self, endpoint, opts):
         return self.api_call('post', endpoint, opts)
 
+    def put(self, endpoint, opts):
+        return self.api_call('put', endpoint, opts)
+
+    def delete(self, endpoint):
+        return self.api_call('delete', endpoint)
+
     def api_call(self, method, endpoint, opts = None):
         optsJson = None
         if opts:
