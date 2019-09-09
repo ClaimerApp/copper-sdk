@@ -3,16 +3,16 @@ class Opportunities():
         self.copper = copper
 
     def get(self, id):
-        return self.copper.get('/opportunities/' + id)
+        return self.copper.get(f"/opportunities/{id}")
 
     def create(self, body = {}):
         return self.copper.post('/opportunities', body)
 
     def update(self, id, body = {}):
-        return self.copper.put('/opportunities/' + id, body)
+        return self.copper.put(f"/opportunities/{id}", body)
 
     def delete(self, id):
-        return self.copper.delete('/opportunities/' + id)
+        return self.copper.delete(f"/opportunities/{id}")
 
     def list(self, body = {}):
         default_body = {

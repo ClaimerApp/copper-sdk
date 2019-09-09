@@ -19,12 +19,18 @@ class Leads():
 
     def convert(self, id, body = {}):
         default_body = {
-            'person': {}, # object	Details about the Person to be created by the Lead conversion. Valid fields are name, contact_type_id, and assignee_id.
-            'company': {}, # object	Details about the Company to which the newly created Person will belong. Valid fields are id or name, and they are mutually exclusive. If a Company id is specified, the new Person will belong to that Company. If the name of an existing Company is specified, the new Person will belong to that Company. If a new name is specified, a new Company will be created with that name, and the new Person will belong to that Company. If you explicitly supply an empty string ("") for the company name, then no Company will be created. By default, fuzzy matching will return a list of candidate companies. An optional Boolean field "exact_match" can be specified if the exact company name is known.
-            'opportunity': {}, # object	Details about the Opportunity to be created by the Lead conversion. Valid fields are name, pipeline_id, pipeline_stage_id, 'monetary_value, and assignee_id. If unspecified, no Opportunity will be created. If pipeline_stage_id is unspecified, it will default to the first stage in the pipeline.
+            "details": {
+                'person': {}, # object	Details about the Person to be created by the Lead conversion. Valid fields are name, contact_type_id, and assignee_id.
+                'company': {}, # object	Details about the Company to which the newly created Person will belong. Valid fields are id or name, and they are mutually exclusive. If a Company id is specified, the new Person will belong to that Company. If the name of an existing Company is specified, the new Person will belong to that Company. If a new name is specified, a new Company will be created with that name, and the new Person will belong to that Company. If you explicitly supply an empty string ("") for the company name, then no Company will be created. By default, fuzzy matching will return a list of candidate companies. An optional Boolean field "exact_match" can be specified if the exact company name is known.
+                'opportunity': {}, # object	Details about the Opportunity to be created by the Lead conversion. Valid fields are name, pipeline_id, pipeline_stage_id, 'monetary_value, and assignee_id. If unspecified, no Opportunity will be created. If pipeline_stage_id is unspecified, it will default to the first stage in the pipeline.
+            }
         }
 
-        return self.copper.post('/leads/' + id + '/convert', { **default_body, **body})
+        url = f"/leads/{id}/convert"
+        payload = { **default_body, **body }
+        print(url)
+        print(payload)
+        return self.copper.post(f"/leads/{id}/convert", payload)
 
     def list(self, body = {}):
         default_body = {

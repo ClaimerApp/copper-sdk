@@ -3,16 +3,16 @@ class Companies():
         self.copper = copper
 
     def get(self, id):
-        return self.copper.get('/companies/' + id)
+        return self.copper.get(f"/companies/{id}")
 
     def create(self, body = {}):
         return self.copper.post('/companies', body)
 
     def update(self, id, body = {}):
-        return self.copper.put('/companies/' + id, body)
+        return self.copper.put(f"/companies/{id}", body)
 
     def delete(self, id):
-        return self.copper.delete('/companies/' + id)
+        return self.copper.delete(f"/companies/{id}")
 
     def list(self, body = {}):
         default_body = {
@@ -25,7 +25,7 @@ class Companies():
         return self.copper.post('/companies/search', { **default_body, **body})
 
     def activities(self, id):
-        return self.copper.get('/companies/' + id + "/activities")
+        return self.copper.get(f"/companies/{id}/activities")
 
     def contact_types(self):
         return self.copper.get('/contact_types')
