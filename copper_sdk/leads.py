@@ -28,8 +28,6 @@ class Leads():
 
         url = f"/leads/{id}/convert"
         payload = { **default_body, **body }
-        print(url)
-        print(payload)
         return self.copper.post(f"/leads/{id}/convert", payload)
 
     def list(self, body = {}):
