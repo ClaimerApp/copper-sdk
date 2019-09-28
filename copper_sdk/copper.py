@@ -1,9 +1,9 @@
 import requests, json
-from leads import Leads
-from activities import Activities
-from companies import Companies
-from people import People
-from opportunities import Opportunities
+from .leads import Leads
+from .activities import Activities
+from .companies import Companies
+from .people import People
+from .opportunities import Opportunities
 
 class Copper():
     # Constructor - authentication details
