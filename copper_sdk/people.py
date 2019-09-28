@@ -3,7 +3,7 @@ class People():
         self.copper = copper
 
     def get(self, id):
-        return self.copper.get(f'/people/${id}')
+        return self.copper.get(f'/people/{id}')
 
     def get_by_email(self, email):
         return self.copper.post('/people/fetch_by_email', { 'email': email })
@@ -12,10 +12,10 @@ class People():
         return self.copper.post('/people', body)
 
     def update(self, id, body = {}):
-        return self.copper.put(f'/people/${id}', body)
+        return self.copper.put(f'/people/{id}', body)
 
     def delete(self, id):
-        return self.copper.delete(f'/people/${id}')
+        return self.copper.delete(f'/people/{id}')
 
     def relate_to_company(self, id, company_id):
         body = {
@@ -25,7 +25,7 @@ class People():
           }
         }
 
-        return self.copper.post(f'/people/${id}/related', body)
+        return self.copper.post(f'/people/{id}/related', body)
         
     def list(self, body = {}):
         default_body = {
@@ -38,7 +38,7 @@ class People():
         return self.copper.post('/people/search', { **default_body, **body})
 
     def activities(self, id):
-        return self.copper.get(f'/people/${id}/activities')
+        return self.copper.get(f'/people/{id}/activities')
 
     def contact_types(self):
         return self.copper.get('/contact_types')
