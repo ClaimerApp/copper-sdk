@@ -7,7 +7,7 @@ from .opportunities import Opportunities
 
 class Copper():
     # Constructor - authentication details
-    def __init__(self, token, email, base_url = 'https://api.prosperworks.com/developer_api/v1', session = None):
+    def __init__(self, token, email, base_url = 'https://api.prosperworks.com/developer_api/v1', debug = False, session = None):
         self.token = token
         self.email = email
         self.base_url = base_url
@@ -39,9 +39,14 @@ class Copper():
         optsJson = None
         if opts:
             optsJson = json.dumps(opts)
+            if self.debug:
+              print(optsJson)
 
         # dynamically call method to handle status change
         response = getattr(self.session, method)(self.base_url + endpoint, data=optsJson)
+
+        if self.debug:
+          print(response.text)
 
         return json.loads(response.text)
 
