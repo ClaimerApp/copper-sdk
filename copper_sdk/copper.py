@@ -11,6 +11,7 @@ class Copper():
         self.token = token
         self.email = email
         self.base_url = base_url
+        self.debug = debug
 
         # init request
         if not session:
