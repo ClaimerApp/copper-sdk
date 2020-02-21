@@ -29,7 +29,7 @@ All the root entities modelled by the Copper API are modelled as separate classe
 * Companies
 * People
 * Leads
-* Opportunities 
+* Opportunities
 
 Each entity has a corresponding python class with the same name and an entrypoint to each of the entities can be retrieved via the main SDK entrypoint, e.g. to make API calls relating to activities:
 
@@ -46,7 +46,7 @@ all_activities = copper.activities().list()
 
 ### Request and response bodies
 
-This library does not do any translation of request and response bodies, and merely maps JSON payloads to and from python dictonaries. Therefore, you can construct request bodies as dictonaries that correspond directly with the JSON request bodies defined within the official Copper [API documentation](https://developer.copper.com/?version=latest#intro). And response bodies will be dictionaries directly mapping to the strcuture of JSON responses as per the official Copper [API documentation](https://developer.copper.com/?version=latest#intro). Please refer to the [documentation](https://developer.copper.com/?version=latest#intro) for details for the structure of request and response bodies.
+This library does not do any translation of request and response bodies, and merely maps JSON payloads to and from python dictionaries. Therefore, you can construct request bodies as dictionaries that correspond directly with the JSON request bodies defined within the official Copper [API documentation](https://developer.copper.com/?version=latest#intro). And response bodies will be dictionaries directly mapping to the structure of JSON responses as per the official Copper [API documentation](https://developer.copper.com/?version=latest#intro). Please refer to the [documentation](https://developer.copper.com/?version=latest#intro) for details for the structure of request and response bodies.
 
 An example that demonstrates supplying a request body when searching for activities:
 
@@ -61,7 +61,7 @@ all_activities = copper.activities().list({
 
 ### Running tests
 
-This library does not currently perform any testing of request bodies and response bodies. At the moment python dictonaries are mapped directly to and from JSON. So, it's really up to users of the library to ensure request bodies are formed as dictionaries as per the official Copper [API documentation](https://developer.copper.com/?version=latest#intro). The scope of the tests is currently to simply make sure the core of the library behaves as expected (e.g. constructs requests using the required HTTP headers).
+This library does not currently perform any testing of request bodies and response bodies. At the moment python dictionaries are mapped directly to and from JSON. So, it's really up to users of the library to ensure request bodies are formed as dictionaries as per the official Copper [API documentation](https://developer.copper.com/?version=latest#intro). The scope of the tests is currently to simply make sure the core of the library behaves as expected (e.g. constructs requests using the required HTTP headers).
 
 To force the API to make actual calls, delete the cached responses in the tests/vcr_cassettes directory.
 

@@ -4,6 +4,8 @@ from .activities import Activities
 from .companies import Companies
 from .people import People
 from .opportunities import Opportunities
+from .customer_sources import CustomerSources
+from .loss_reasons import LossReasons
 
 class Copper():
     # Constructor - authentication details
@@ -65,3 +67,9 @@ class Copper():
 
     def companies(self):
         return Companies(self)
+
+    def customersources(self):
+        return CustomerSources(self)
+
+    def lossreasons(self):
+        return LossReasons(self)
