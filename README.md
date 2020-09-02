@@ -30,6 +30,7 @@ All the root entities modelled by the Copper API are modelled as separate classe
 * People
 * Leads
 * Opportunities
+* Custom Fields
 
 Each entity has a corresponding python class with the same name and an entrypoint to each of the entities can be retrieved via the main SDK entrypoint, e.g. to make API calls relating to activities:
 
