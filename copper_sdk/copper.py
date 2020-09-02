@@ -6,6 +6,7 @@ from .people import People
 from .opportunities import Opportunities
 from .customer_sources import CustomerSources
 from .loss_reasons import LossReasons
+from .custom_field_definitions import CustomFieldDefinitions
 
 class Copper():
     # Constructor - authentication details
@@ -73,3 +74,6 @@ class Copper():
 
     def lossreasons(self):
         return LossReasons(self)
+
+    def customfielddefinitions(self):
+        return CustomFieldDefinitions(self)
