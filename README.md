@@ -25,6 +25,7 @@ copper = copper.Copper(
 
 All the root entities modelled by the Copper API are modelled as separate classes in this SDK. The currently supported root entities are:
 
+* Users
 * Activities
 * Companies
 * People
