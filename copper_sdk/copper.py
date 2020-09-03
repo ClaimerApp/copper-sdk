@@ -1,4 +1,5 @@
 import requests, json
+from .users import Users
 from .leads import Leads
 from .activities import Activities
 from .companies import Companies
@@ -53,6 +54,9 @@ class Copper():
           print(response.text)
 
         return json.loads(response.text)
+
+    def users(self):
+        return Users(self)
 
     def leads(self):
         return Leads(self)
