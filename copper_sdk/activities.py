@@ -25,4 +25,4 @@ class Activities():
         return self.copper.post('/activities/search', { **default_body, **body})
 
     def types(self):
-        return self.copper.get('/activity_types', body)
+        return self.copper.get('/activity_types')
