@@ -1,4 +1,7 @@
-class Companies:
+from copper_sdk.base import BaseResource
+
+
+class Companies(BaseResource):
 
     def __init__(self, copper):
         self.copper = copper

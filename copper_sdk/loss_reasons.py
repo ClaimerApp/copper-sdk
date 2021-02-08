@@ -1,4 +1,7 @@
-class LossReasons:
+from copper_sdk.base import BaseResource
+
+
+class LossReasons(BaseResource):
 
     def __init__(self, copper):
         self.copper = copper

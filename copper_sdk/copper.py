@@ -1,19 +1,21 @@
-import requests, json
-from .users import Users
-from .leads import Leads
-from .activities import Activities
-from .companies import Companies
-from .people import People
-from .opportunities import Opportunities
-from .customer_sources import CustomerSources
-from .loss_reasons import LossReasons
-from .custom_field_definitions import CustomFieldDefinitions
+import requests
+from copper_sdk.users import Users
+from copper_sdk.leads import Leads
+from copper_sdk.activities import Activities
+from copper_sdk.companies import Companies
+from copper_sdk.people import People
+from copper_sdk.opportunities import Opportunities
+from copper_sdk.customer_sources import CustomerSources
+from copper_sdk.loss_reasons import LossReasons
+from copper_sdk.custom_field_definitions import CustomFieldDefinitions
+
+BASE_URL = 'https://api.prosperworks.com/developer_api/v1'
 
 
 class Copper:
 
     # Constructor - authentication details
-    def __init__(self, token, email, base_url='https://api.prosperworks.com/developer_api/v1', debug=False, session=None):
+    def __init__(self, token, email, base_url=BASE_URL, debug=False, session=None):
         self.token = token
         self.email = email
         self.base_url = base_url
@@ -24,11 +26,12 @@ class Copper:
             session = requests.Session()
 
         self.session = session
-        self.session.headers = {}
-        self.session.headers['X-PW-AccessToken'] = self.token
-        self.session.headers['X-PW-Application'] = 'developer_api'
-        self.session.headers['X-PW-UserEmail'] = self.email
-        self.session.headers['Content-Type'] = 'application/json'
+        self.session.headers = {
+            'X-PW-AccessToken': self.token,
+            'X-PW-Application': 'developer_api',
+            'X-PW-UserEmail': self.email,
+            # 'Content-Type': 'application/json',
+        }
 
     def get(self, endpoint):
         return self.api_call('get', endpoint)
@@ -42,44 +45,50 @@ class Copper:
     def delete(self, endpoint):
         return self.api_call('delete', endpoint)
 
-    def api_call(self, method, endpoint, opts = None):
-        optsJson = None
-        if opts:
-            optsJson = json.dumps(opts)
-            if self.debug:
-              print(optsJson)
+    def api_call(self, method, endpoint, json_body=None):
+        if self.debug:
+            print("json_body:", json_body)
 
         # dynamically call method to handle status change
-        response = getattr(self.session, method)(self.base_url + endpoint, data=optsJson)
+        response = self.session.request(method, self.base_url + endpoint, json=json_body)
 
         if self.debug:
-          print(response.text)
+            print(response.text)
 
-        return json.loads(response.text)
+        return response.json()
 
+    @property
     def users(self):
         return Users(self)
 
+    @property
     def leads(self):
         return Leads(self)
 
+    @property
     def activities(self):
         return Activities(self)
 
+    @property
     def opportunities(self):
         return Opportunities(self)
 
+    @property
     def people(self):
         return People(self)
 
+    @property
     def companies(self):
         return Companies(self)
 
+    @property
     def customersources(self):
         return CustomerSources(self)
 
+    @property
     def lossreasons(self):
         return LossReasons(self)
 
+    @property
     def customfielddefinitions(self):
         return CustomFieldDefinitions(self)

@@ -1,4 +1,7 @@
-class Activities:
+from copper_sdk.base import BaseResource
+
+
+class Activities(BaseResource):
 
     def __init__(self, copper):
         self.copper = copper

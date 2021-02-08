@@ -1,4 +1,7 @@
-class Opportunities:
+from copper_sdk.base import BaseResource
+
+
+class Opportunities(BaseResource):
 
     def __init__(self, copper):
         self.copper = copper

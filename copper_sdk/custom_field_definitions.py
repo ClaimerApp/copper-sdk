@@ -1,4 +1,7 @@
-class CustomFieldDefinitions:
+from copper_sdk.base import BaseResource
+
+
+class CustomFieldDefinitions(BaseResource):
 
     def __init__(self, copper):
         self.copper = copper
