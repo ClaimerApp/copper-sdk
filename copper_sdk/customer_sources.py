@@ -1,4 +1,5 @@
-class CustomerSources():
+class CustomerSources:
+
     def __init__(self, copper):
         self.copper = copper
 

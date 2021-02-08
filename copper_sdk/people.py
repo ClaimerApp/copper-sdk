@@ -1,4 +1,5 @@
-class People():
+class People:
+
     def __init__(self, copper):
         self.copper = copper
 
@@ -8,10 +9,14 @@ class People():
     def get_by_email(self, email):
         return self.copper.post('/people/fetch_by_email', { 'email': email })
 
-    def create(self, body = {}):
+    def create(self, body=None):
+        if body is None:
+            body = {}
         return self.copper.post('/people', body)
 
-    def update(self, id, body = {}):
+    def update(self, id, body=None):
+        if body is None:
+            body = {}
         return self.copper.put(f'/people/{id}', body)
 
     def delete(self, id):
@@ -27,7 +32,9 @@ class People():
 
         return self.copper.post(f'/people/{id}/related', body)
         
-    def list(self, body = {}):
+    def list(self, body=None):
+        if body is None:
+            body = {}
         default_body = {
             'page_number': 1, # number	The page number (starting with 1) that you would like to view.	1
             'page_size': 20, # number	The number of entries included in a page of results	20
@@ -35,7 +42,7 @@ class People():
             'sort_direction': 'asc',  # string	The direction in which to sort the results. Possible values are: asc or desc.
         }
 
-        return self.copper.post('/people/search', { **default_body, **body})
+        return self.copper.post('/people/search', {**default_body, **body})
 
     def activities(self, id):
         return self.copper.get(f'/people/{id}/activities')

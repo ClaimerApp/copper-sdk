@@ -1,17 +1,22 @@
-class Activities():
+class Activities:
+
     def __init__(self, copper):
         self.copper = copper
 
     def get(self, id):
         return self.copper.get('/activities/' + id)
 
-    def create(self, body = {}):
+    def create(self, body=None):
+        if body is None:
+            body = {}
         return self.copper.post('/activities', body)
 
     def delete(self, id):
         return self.copper.delete('/activities/' + id)
 
-    def list(self, body = {}):
+    def list(self, body=None):
+        if body is None:
+            body = {}
         default_body = {
             # 'parent': {}, # hash	A hash describing the resource to which activities must belong (footnote 1).
             # 'activity_types': {}, # activity_type[]	The activity types to filter results on (footnote 1).	none

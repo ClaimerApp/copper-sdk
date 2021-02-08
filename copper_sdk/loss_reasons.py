@@ -1,4 +1,5 @@
-class LossReasons():
+class LossReasons:
+
     def __init__(self, copper):
         self.copper = copper
 

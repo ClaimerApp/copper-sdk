@@ -9,9 +9,11 @@ from .customer_sources import CustomerSources
 from .loss_reasons import LossReasons
 from .custom_field_definitions import CustomFieldDefinitions
 
-class Copper():
+
+class Copper:
+
     # Constructor - authentication details
-    def __init__(self, token, email, base_url = 'https://api.prosperworks.com/developer_api/v1', debug = False, session = None):
+    def __init__(self, token, email, base_url='https://api.prosperworks.com/developer_api/v1', debug=False, session=None):
         self.token = token
         self.email = email
         self.base_url = base_url

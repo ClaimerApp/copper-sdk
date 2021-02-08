@@ -1,23 +1,32 @@
-class Leads():
+class Leads:
+
     def __init__(self, copper):
         self.copper = copper
 
     def get(self, id):
         return self.copper.get('/leads/' + id)
 
-    def create(self, body = {}):
+    def create(self, body=None):
+        if body is None:
+            body = {}
         return self.copper.post('/leads', body)
 
-    def update(self, id, body = {}):
+    def update(self, id, body=None):
+        if body is None:
+            body = {}
         return self.copper.put('/leads/' + id, body)
 
     def delete(self, id):
         return self.copper.delete('/leads/' + id)
 
-    def upsert(self, body = {}):
+    def upsert(self, body=None):
+        if body is None:
+            body = {}
         return self.copper.put('/leads/upsert', body)
 
-    def convert(self, id, body = {}):
+    def convert(self, id, body=None):
+        if body is None:
+            body = {}
         default_body = {
             "details": {
                 'person': {}, # object	Details about the Person to be created by the Lead conversion. Valid fields are name, contact_type_id, and assignee_id.
@@ -30,7 +39,9 @@ class Leads():
         payload = { **default_body, **body }
         return self.copper.post(f"/leads/{id}/convert", payload)
 
-    def list(self, body = {}):
+    def list(self, body=None):
+        if body is None:
+            body = {}
         default_body = {
             'page_number': 1,  # number	The page number (starting with 1) that you would like to view.
             'page_size': 20,  # number	The number of entries included in a page of results
@@ -40,7 +51,9 @@ class Leads():
 
         return self.copper.post('/leads/search', { **default_body, **body})
 
-    def activities(self, id, body = {}):
+    def activities(self, id, body=None):
+        if body is None:
+            body = {}
         default_body = {
             'page_number': 1, # number	The page number (starting with 1) that you would like to view.	1
             'page_size': 20, # number	The number of entries included in a page of results	20
@@ -49,8 +62,8 @@ class Leads():
 
         return self.copper.post('/leads/' + str(id) + '/activities', {**default_body, **body})
 
-    def customer_sources():
+    def customer_sources(self):
         return self.copper.get('/customer_sources')
 
-    def statuses():
+    def statuses(self):
         return self.copper.get('/lead_statuses')
