@@ -1,0 +1,3 @@
+#vcrpy>=2.0.1
+https://github.com/kevin1024/vcrpy/archive/master.zip
+pytest>=4.5.0
