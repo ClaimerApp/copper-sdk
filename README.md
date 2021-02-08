@@ -12,12 +12,12 @@ Unofficial Copper CRM SDK written in Python
 
 To make any API via the SDK, you first need to create an instance of the Copper class, configured correctly with your email and Copper API token. This is essentially the entrypoint into using the SDK.
 
-```
-from copper_sdk import copper
+```python
+from copper_sdk import Copper
 
-copper = copper.Copper(
-    email = 'joe@bloggs.com`,
-    token = 'abc123
+copper = Copper(
+    email='joe@bloggs.com',
+    token='abc123',
 )
 ```
 
@@ -35,15 +35,15 @@ All the root entities modelled by the Copper API are modelled as separate classe
 
 Each entity has a corresponding python class with the same name and an entrypoint to each of the entities can be retrieved via the main SDK entrypoint, e.g. to make API calls relating to activities:
 
-```
-from copper_sdk import copper
+```python
+from copper_sdk import Copper
 
-copper = copper.Copper(
-    email = 'joe@bloggs.com`,
-    token = 'abc123
+copper = Copper(
+    email='joe@bloggs.com',
+    token='abc123',
 )
 
-all_activities = copper.activities().list()
+all_activities = copper.activities.list()
 ```
 
 ### Request and response bodies
@@ -52,8 +52,8 @@ This library does not do any translation of request and response bodies, and mer
 
 An example that demonstrates supplying a request body when searching for activities:
 
-```
-all_activities = copper.activities().list({
+```python
+all_activities = copper.activities.list({
     page_number: 2,
     page_size: 50
 })
@@ -67,11 +67,11 @@ This library does not currently perform any testing of request bodies and respon
 
 To force the API to make actual calls, delete the cached responses in the tests/vcr_cassettes directory.
 
-```
+```bash
 # install depds
-$ pipenv install
+pipenv install
 # enter shell
-$ pipenv shell
+pipenv shell
 # run tests
-$ COPPER_API_TOKEN='<my copper token>' COPPER_API_EMAIL='<my copper email>' pytest
+COPPER_API_TOKEN='<my copper token>' COPPER_API_EMAIL='<my copper email>' pytest
 ```
