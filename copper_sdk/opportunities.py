@@ -47,4 +47,4 @@ class Opportunities(BaseResource):
         return self.copper.get('/pipeline_stages')
     
     def stages_in_pipeline(self, id):
-        return self.copper.get('/pipeline/pipeline_stages/' + id)
+        return self.copper.get(f'/pipeline/pipeline_stages/{id}')

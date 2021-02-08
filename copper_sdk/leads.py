@@ -7,7 +7,7 @@ class Leads(BaseResource):
         self.copper = copper
 
     def get(self, id):
-        return self.copper.get('/leads/' + id)
+        return self.copper.get(f'/leads/{id}')
 
     def create(self, body=None):
         if body is None:
@@ -17,10 +17,10 @@ class Leads(BaseResource):
     def update(self, id, body=None):
         if body is None:
             body = {}
-        return self.copper.put('/leads/' + id, body)
+        return self.copper.put(f'/leads/{id}', body)
 
     def delete(self, id):
-        return self.copper.delete('/leads/' + id)
+        return self.copper.delete(f'/leads/{id}')
 
     def upsert(self, body=None):
         if body is None:
@@ -63,7 +63,7 @@ class Leads(BaseResource):
             'full_result': False, # boolean	(Optional) If set to true, search performance improves but duplicate activity logs may be returned (footnote 3).	false
         }
 
-        return self.copper.post('/leads/' + str(id) + '/activities', {**default_body, **body})
+        return self.copper.post(f'/leads/{id}/activities', {**default_body, **body})
 
     def customer_sources(self):
         return self.copper.get('/customer_sources')

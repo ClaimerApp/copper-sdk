@@ -7,7 +7,7 @@ class Activities(BaseResource):
         self.copper = copper
 
     def get(self, id):
-        return self.copper.get('/activities/' + id)
+        return self.copper.get(f'/activities/{id}')
 
     def create(self, body=None):
         if body is None:
@@ -15,7 +15,7 @@ class Activities(BaseResource):
         return self.copper.post('/activities', body)
 
     def delete(self, id):
-        return self.copper.delete('/activities/' + id)
+        return self.copper.delete(f'/activities/{id}')
 
     def list(self, body=None):
         if body is None:

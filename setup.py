@@ -5,7 +5,7 @@ with open("README.md", "r") as fh:
 
 setuptools.setup(
     name="copper-sdk",
-    version="1.0.0",
+    version="1.0.1",
     author="Claimer Tech Ltd",
     author_email="dev@claimer.com",
     description="Unofficial Copper CRM SDK written in Python",
