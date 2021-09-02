@@ -9,7 +9,7 @@ from copper_sdk.customer_sources import CustomerSources
 from copper_sdk.loss_reasons import LossReasons
 from copper_sdk.custom_field_definitions import CustomFieldDefinitions
 
-BASE_URL = 'https://api.prosperworks.com/developer_api/v1'
+BASE_URL = 'https://api.copper.com/developer_api'
 
 
 class Copper:
