@@ -1,6 +1,7 @@
 import requests
 from copper_sdk.users import Users
 from copper_sdk.leads import Leads
+from copper_sdk.account import Account
 from copper_sdk.activities import Activities
 from copper_sdk.companies import Companies
 from copper_sdk.people import People
@@ -64,6 +65,10 @@ class Copper:
     @property
     def leads(self):
         return Leads(self)
+
+    @property
+    def account(self):
+        return Account(self)
 
     @property
     def activities(self):
