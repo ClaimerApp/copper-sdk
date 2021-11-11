@@ -1,4 +1,6 @@
 import requests
+from retry import retry
+from json import JSONDecodeError
 from copper_sdk.users import Users
 from copper_sdk.leads import Leads
 from copper_sdk.account import Account
@@ -46,6 +48,7 @@ class Copper:
     def delete(self, endpoint):
         return self.api_call('delete', endpoint)
 
+    @retry(JSONDecodeError, delay=1, backoff=2, max_delay=4, tries=3)
     def api_call(self, method, endpoint, json_body=None):
         if self.debug:
             print("json_body:", json_body)
