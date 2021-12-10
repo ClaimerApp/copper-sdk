@@ -11,6 +11,7 @@ from copper_sdk.opportunities import Opportunities
 from copper_sdk.customer_sources import CustomerSources
 from copper_sdk.loss_reasons import LossReasons
 from copper_sdk.custom_field_definitions import CustomFieldDefinitions
+from copper_sdk.tags import Tags
 
 BASE_URL = 'https://api.copper.com/developer_api/v1'
 
@@ -96,6 +97,10 @@ class Copper:
     @property
     def lossreasons(self):
         return LossReasons(self)
+
+    @property
+    def tags(self):
+        return Tags(self)
 
     @property
     def customfielddefinitions(self):
