@@ -34,7 +34,17 @@ class People(BaseResource):
         }
 
         return self.copper.post(f'/people/{id}/related', body)
-        
+
+    def unrelate_to_company(self, id, company_id):
+        body = {
+          'resource': {
+              'id': company_id,
+              'type': 'company'
+          }
+        }
+
+        return self.copper.delete(f'/people/{id}/related', json_body=body)
+
     def list(self, body=None):
         if body is None:
             body = {}
