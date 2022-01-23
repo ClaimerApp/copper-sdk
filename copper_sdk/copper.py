@@ -46,8 +46,8 @@ class Copper:
     def put(self, endpoint, opts):
         return self.api_call('put', endpoint, opts)
 
-    def delete(self, endpoint):
-        return self.api_call('delete', endpoint)
+    def delete(self, endpoint, json_body=None):
+        return self.api_call('delete', endpoint, json_body=json_body)
 
     @retry(JSONDecodeError, delay=1, backoff=2, max_delay=4, tries=3)
     def api_call(self, method, endpoint, json_body=None):
