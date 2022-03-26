@@ -12,6 +12,7 @@ from copper_sdk.customer_sources import CustomerSources
 from copper_sdk.loss_reasons import LossReasons
 from copper_sdk.custom_field_definitions import CustomFieldDefinitions
 from copper_sdk.tags import Tags
+from copper_sdk.exception import TooManyRequests
 
 BASE_URL = 'https://api.copper.com/developer_api/v1'
 
@@ -56,6 +57,9 @@ class Copper:
 
         # dynamically call method to handle status change
         response = self.session.request(method, self.base_url + endpoint, json=json_body)
+
+        if response.status_code == 429:
+            raise TooManyRequests('429 Server Rate Limit', response=response, json_body=json_body)
 
         if self.debug:
             print(response.text)
