@@ -21,7 +21,7 @@ copper = Copper(
 )
 ```
 
-### Making API calls uisng the SDK
+### Making API calls using the SDK
 
 All the root entities modelled by the Copper API are modelled as separate classes in this SDK. The currently supported root entities are:
 
