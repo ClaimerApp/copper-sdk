@@ -34,6 +34,9 @@ class Companies(BaseResource):
 
         return self.copper.post('/companies/search', {**default_body, **body})
 
+    def list_related(self, id):
+        return self.copper.get(f'/companies/{id}/related')
+
     def activities(self, id):
         return self.copper.get(f"/companies/{id}/activities")
 
