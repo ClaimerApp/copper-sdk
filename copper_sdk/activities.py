@@ -32,5 +32,10 @@ class Activities(BaseResource):
 
         return self.copper.post('/activities/search', { **default_body, **body})
 
+    def update(self, id, body=None):
+        if body is None:
+            body = {}
+        return self.copper.put(f'/activities/{id}', body)
+
     def types(self):
         return self.copper.get('/activity_types')
