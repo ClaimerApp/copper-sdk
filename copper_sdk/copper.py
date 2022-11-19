@@ -50,7 +50,7 @@ class Copper:
     def delete(self, endpoint, json_body=None):
         return self.api_call('delete', endpoint, json_body=json_body)
 
-    @retry(exceptions=(JSONDecodeError, requests.exceptions.HTTPError), delay=1, backoff=2, max_delay=4, tries=3)
+    @retry(exceptions=(JSONDecodeError, requests.exceptions.HTTPError), delay=2, backoff=3, max_delay=5, tries=5)
     def api_call(self, method, endpoint, json_body=None):
         if self.debug:
             print("json_body:", json_body)
@@ -66,7 +66,7 @@ class Copper:
 
         body = response.json()
         if body and "success" in body and body["success"] == False and "status" in body and body["status"] == 500:
-            raise requests.exceptions.HTTPError(endpoint, 500, "Internal copper error", None, None)
+            raise requests.exceptions.HTTPError(endpoint, 500, f"Internal copper error {body}", None, None)
 
         return response.json()
 
