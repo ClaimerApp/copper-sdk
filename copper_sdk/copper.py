@@ -13,6 +13,7 @@ from copper_sdk.loss_reasons import LossReasons
 from copper_sdk.custom_field_definitions import CustomFieldDefinitions
 from copper_sdk.tags import Tags
 from copper_sdk.exception import TooManyRequests
+from copper_sdk.webhooks import Webhooks
 
 BASE_URL = 'https://api.copper.com/developer_api/v1'
 
@@ -113,3 +114,7 @@ class Copper:
     @property
     def customfielddefinitions(self):
         return CustomFieldDefinitions(self)
+
+    @property
+    def webhooks(self):
+        return Webhooks(self)
