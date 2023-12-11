@@ -1,6 +1,9 @@
 import requests
 from retry import retry
 from json import JSONDecodeError
+
+from copper_sdk.pipeline_stages import PipelineStages
+from copper_sdk.pipelines import Pipelines
 from copper_sdk.users import Users
 from copper_sdk.leads import Leads
 from copper_sdk.account import Account
@@ -118,3 +121,11 @@ class Copper:
     @property
     def webhooks(self):
         return Webhooks(self)
+
+    @property
+    def pipelines(self):
+        return Pipelines(self)
+
+    @property
+    def pipelinestages(self):
+        return PipelineStages(self)
