@@ -21,6 +21,16 @@ class Tasks(BaseResource):
     def delete(self, id):
         return self.copper.delete(f"/tasks/{id}")
 
+    def relate(self, id, entity_id, entity_type):
+        """Relate this task to another entity (e.g. person). Note: tasks cannot be unrelated later."""
+        body = {
+          'resource': {
+              'id': entity_id,
+              'type': entity_type
+          }
+        }
+        return self.copper.post(f'/tasks/{id}/related', body)
+
     def list(self, body=None):
         if body is None:
             body = {}
