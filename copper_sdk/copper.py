@@ -15,6 +15,7 @@ from copper_sdk.customer_sources import CustomerSources
 from copper_sdk.loss_reasons import LossReasons
 from copper_sdk.custom_field_definitions import CustomFieldDefinitions
 from copper_sdk.tags import Tags
+from copper_sdk.tasks import Tasks
 from copper_sdk.exception import TooManyRequests
 from copper_sdk.webhooks import Webhooks
 
@@ -113,6 +114,10 @@ class Copper:
     @property
     def tags(self):
         return Tags(self)
+
+    @property
+    def tasks(self):
+        return Tasks(self)
 
     @property
     def customfielddefinitions(self):
