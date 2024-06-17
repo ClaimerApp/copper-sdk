@@ -52,3 +52,22 @@ class Opportunities(BaseResource):
     def related(self, id):
         return self.copper.get(f'/opportunities/{id}/related')
 
+    def list_related(self, id):
+        return self.copper.get(f'/related_links?source_type=opportunity&source_id={id}')
+
+    def unrelate(self, id):
+        return self.copper.delete(f'/related_links/{id}')
+
+    def relate(self, relation_id, id, target_type, target_id):
+        body = {
+            'custom_field_definition_id': relation_id, 
+            'source': {
+                'id': id,
+                'entity_type': 'opportunity'
+            },
+            'target': {
+                'id': target_id,
+                'entity_type': target_type
+            }
+        }
+        return self.copper.post('/related_links', body)
