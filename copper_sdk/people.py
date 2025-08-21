@@ -22,6 +22,12 @@ class People(BaseResource):
             body = {}
         return self.copper.put(f'/people/{id}', body)
 
+    def bulk_update(self, body=None):
+        """Take a list of people, update in one operation."""
+        if body is None:
+            body = []
+        return self.copper.post('/people/bulk_update', { "people": body})
+
     def delete(self, id):
         return self.copper.delete(f'/people/{id}')
 

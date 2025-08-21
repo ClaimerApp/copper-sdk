@@ -19,6 +19,12 @@ class Companies(BaseResource):
             body = {}
         return self.copper.put(f"/companies/{id}", body)
 
+    def bulk_update(self, id, body=None):
+        """Take a list of companies, update."""
+        if body is None:
+            body = []
+        return self.copper.post('/companies/bulk_update', { "companies": body})
+
     def delete(self, id):
         return self.copper.delete(f"/companies/{id}")
 
